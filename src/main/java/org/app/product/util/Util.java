@@ -31,6 +31,7 @@ public class Util {
 
     public ProductResponse productResponseBuilder(Product product) {
         return ProductResponse.builder()
+                .productId(product.getProductId())
                 .name(product.getName())
                 .description(product.getDescription())
                 .price(product.getPrice())

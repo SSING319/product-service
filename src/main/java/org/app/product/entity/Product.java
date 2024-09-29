@@ -14,7 +14,6 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Table(name = "product")
 public class Product{
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productID")
@@ -32,10 +31,11 @@ public class Product{
     @Column(name = "sku", unique = true)
     private String sku;
 
+    @Builder.Default
     @Column(name = "quantityInStock")
     private Integer quantityInStock = 0;
 
     @Column(name = "image")
     private byte[] image;
-
 }
+
