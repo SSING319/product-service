@@ -29,17 +29,15 @@ import java.util.List;
 public class ProductController {
 
     @Inject
-    private final ProductService productService;
+    ProductService productService;
+
+    @Inject
+    Tracer tracer;
 
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
-    @Inject
-    private final Tracer tracer;
-
-
     //POST
     @POST
-    @Transactional
     @Path("/add")
     @Operation(summary = "Creates a Product in the Database")
     public Response createProduct(ProductCreationRequest request) throws IOException {

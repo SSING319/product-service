@@ -13,8 +13,7 @@ import java.util.List;
 @UtilityClass
 public class Util {
     public byte[] convertImageToByteArray(String imagePath) throws IOException {
-        // Assuming the image is stored in the resources directory
-        File imageFile = new File("src/main/resources/" + imagePath); // Adjust the path as necessary
+        File imageFile = new File("src/main/resources/" + imagePath);
         return Files.readAllBytes(imageFile.toPath());
     }
 
